@@ -1,6 +1,6 @@
 from app import app
-
+from flask import render_template
 
 @app.route("/")
 def hello_cat():
-    return "Hello, Cat!"
+    return render_template('index.html')
