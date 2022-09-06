@@ -8,4 +8,5 @@ def hello_cat():
         'name': 'Salem'
     }
 
-    return render_template('index.html', cat = cat_info)
+    breeds = ['tuxedo cat', 'norwegian forest cat', 'tortoise shell', 'british shorthair', 'siamese cat', 'sphynx cat', 'munchkin cat', 'siberian cat', 'tonkinese cat', 'van cat', 'burmese cat', 'british longhair', 'persian cat']
+    return render_template('index.html', cat = cat_info, breeds=breeds)
