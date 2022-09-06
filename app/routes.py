@@ -12,3 +12,7 @@ def hello_cat():
 
     
     return render_template('index.html', cat = cat_info, breeds=breeds)
+
+@app.route('/cats')
+def cat():
+    return '<h1>Cats are superior</h1>'
