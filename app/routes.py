@@ -15,4 +15,4 @@ def hello_cat():
 
 @app.route('/cats')
 def cat():
-    return '<h1>Cats are superior</h1>'
+    return render_template('cats.html')
