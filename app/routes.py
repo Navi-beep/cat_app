@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template
+from app.forms import Create_accountForm
 
 @app.route('/')
 def hello_cat():
@@ -20,4 +21,5 @@ def cat():
 
 @app.route('/createacct')
 def createacct():
-    return render_template('createacct.html')
+    form = Create_accountForm()
+    return render_template('createacct.html', form=form)
