@@ -16,3 +16,8 @@ def hello_cat():
 @app.route('/cats')
 def cat():
     return render_template('cats.html')
+
+
+@app.route('/createacct')
+def createacct():
+    return render_template('createacct.html')
