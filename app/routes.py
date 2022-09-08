@@ -19,7 +19,8 @@ def cat():
     return render_template('cats.html')
 
 
-@app.route('/createacct')
+@app.route('/createacct', methods=["GET", "POST"])
 def createacct():
     form = Create_accountForm()
+    print("Form has been validated")
     return render_template('createacct.html', form=form)
