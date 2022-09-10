@@ -55,3 +55,10 @@ def login():
             flash('Bad username and/or password, Please try signing in again', 'danger')
             return redirect(url_for('login'))
     return render_template('loginpage.html', form=form) 
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    flash('You have now logged out and left the kitty kingdom', 'primary')
+    return redirect(url_for('hello_cat'))
+
