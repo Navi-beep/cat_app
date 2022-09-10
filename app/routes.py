@@ -12,14 +12,16 @@ def hello_cat():
         'name': 'Salem'
     }
 
+
     breeds = ['tuxedo cat', 'norwegian forest cat', 'tortoise shell', 'british shorthair', 'siamese cat', 'sphynx cat', 'munchkin cat', 'siberian cat', 'tonkinese cat', 'van cat', 'burmese cat', 'british longhair', 'persian cat']
 
     
     return render_template('index.html', cat = cat_info, breeds=breeds)
 
-@app.route('/cats')
+@app.route('/addcats')
 def cat():
-    return render_template('cats.html')
+    return render_template('addcats.html')
+
 
 
 @app.route('/createaccount', methods=['GET', 'POST'])

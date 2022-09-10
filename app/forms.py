@@ -17,6 +17,7 @@ class LoginForm(FlaskForm):
 
 class CatForm(FlaskForm):
     fav_cat_breed = StringField('Favorite Cat Breed or color', validators=[DataRequired()])
+    fav_int_cat = StringField('Favorite Famous Cat', validators=[DataRequired()])
     fav_cat_fact = StringField('Favorite fact or thing about Cats', validators=[DataRequired()])
     submit = SubmitField()      
 
