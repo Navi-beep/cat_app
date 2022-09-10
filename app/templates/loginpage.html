@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Login Page {% endblock title %}
+
+{% block content %}
+
+<h2 class="h2 text-center">Please Login on this page</h2>
+
+<form method="post">
+
+    <div class="form-group">
+        {{ form.username.label }}
+        {{ form.username(class='form-control', placeholder='Please Enter Username')}}
+
+        {{ form.password.label }}
+
+        {{form.password(class='form-control', placeholder='Please Enter Password')}}
+
+        {{form.submit(class='btn btn-info w-75 mt-3') }}
+
+    </div>
+</form>
+
+{% endblock content %}
