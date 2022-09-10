@@ -1,6 +1,9 @@
 from app import app
-from flask import render_template
+from flask import render_template, redirect, url_for, flash
 from app.forms import Create_accountForm
+from app.models import User
+from flask_login import login_user, logout_user, login_required, current_user 
+
 
 @app.route('/')
 def hello_cat():
@@ -19,8 +22,16 @@ def cat():
     return render_template('cats.html')
 
 
-@app.route('/createacct', methods=["GET", "POST"])
+@app.route('/createaccount', methods=['GET', 'POST'])
 def createacct():
     form = Create_accountForm()
-    print("Form has been validated")
-    return render_template('createacct.html', form=form)
+    if form.validate_on_submit():
+        print('Form is validated. That is such cool beans man')
+        email = form.email.data
+        username = form.username.data
+        password = form.password.data
+        new_user = User(email=email, username=username, password=password)
+        print(f"{new_user.username} has been created!!")
+    return render_template('createaccount.html', form=form)
+
+
