@@ -30,8 +30,13 @@ def createacct():
         email = form.email.data
         username = form.username.data
         password = form.password.data
+        existing_user = User.query.filter((User.email == email) | (User.username == username)).first()
+        if existing_user:
+            flash('A user with that username or email already exists!', 'danger')
+            return redirect(url_for('createacct'))
         new_user = User(email=email, username=username, password=password)
-        print(f"{new_user.username} has been created!!")
+        flash(f"{new_user.username} has been added to website!", "success")
+        return redirect(url_for('hello_cat')) 
     return render_template('createaccount.html', form=form)
 
-
+        
