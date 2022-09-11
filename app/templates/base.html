@@ -41,14 +41,18 @@
           </nav>
 
         <!--<h1 class="h1 text-center">Welcome to Cat App!</h1>-->
-        {% include 'alerts.html'%}
+            {% include 'alerts.html'%}
 
-        <div class="container">
-            {% block content %}
-            {% endblock content %}
+            <div class="d-flex container align-items-center border border-secondary mt-3">
+              <div class="row w-100">
+                <div class="container">
+                    {% block content %}
+                    {% endblock content %}
 
-        </div>
-        
+                </div>
+              </div>
+            </div>
+            
 
 
         
