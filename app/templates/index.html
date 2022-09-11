@@ -5,11 +5,36 @@
      
 
 {% block content %}
-        <h1 class="h1 text-center">Welcome to Cat App, <strong>{{current_user.username }} </strong>!</h1>
+        <h1 class="h1 text-center">Welcome to Cat App</h1>
 
         <div class="cat text-center">
             <img src="{{url_for('static', filename='pexels.jpg')}}" alt="cat paw on keyboard" class="cat rounded w-50 mb-2"/>
             </div>
+
+{% if current_user.is_authenticated %}
+        <h6 class="text-center">
+            Currently signed in as {{current_user.username }}
+        </h6>
+
+        {% for cat in cats %}
+
+        <div class="card text-center">
+            <div class="card-header">
+                {{ cat.fav_cat_breed }}
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ cat.fav_int_cat}}</h5>
+              <p class="card-text">{{ cat.fav_cat_fact }}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            <div class="card-footer text-muted">
+              posted by: {{ cat.author.username }}
+            </div>
+          </div>
+        {% endfor %}
+
+
+{% endif %}
     
 
 
