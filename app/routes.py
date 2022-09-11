@@ -1,29 +1,26 @@
 from app import app
 from flask import render_template, redirect, url_for, flash
 from app.forms import Create_accountForm, LoginForm, CatForm
-from app.models import User
+from app.models import User, Add_Cat
 from flask_login import login_user, logout_user, login_required, current_user 
 
 
 @app.route('/')
-def hello_cat():
-    cat_info = {
-        'breed': 'Tuxedo cat',
-        'name': 'Salem'
-    }
+def hello_cat(): 
+    return render_template('index.html')
 
-
-    breeds = ['tuxedo cat', 'norwegian forest cat', 'tortoise shell', 'british shorthair', 'siamese cat', 'sphynx cat', 'munchkin cat', 'siberian cat', 'tonkinese cat', 'van cat', 'burmese cat', 'british longhair', 'persian cat']
-
-    
-    return render_template('index.html', cat = cat_info, breeds=breeds)
-
-@app.route('/addcats')
+@app.route('/addcats', methods=['GET', 'POST'])
+@login_required
 def cat():
     form = CatForm()
+    if form.validate_on_submit():
+        fav_cat_breed = form.fav_cat_breed.data
+        fav_int_cat = form.fav_int_cat.data
+        fav_cat_fact = form.fav_cat_fact.data
+        new_cat = Add_Cat(fav_cat_breed=fav_cat_breed, fav_int_cat=fav_int_cat, fav_cat_fact=fav_cat_fact, user_id= current_user.id)
+        flash(f"{new_cat.fav_int_cat} has been added to the kitty collection!", "info")
+        return redirect(url_for('hello_cat'))
     return render_template('addcats.html', form=form)
-
-
 
 @app.route('/createaccount', methods=['GET', 'POST'])
 def create_account():
