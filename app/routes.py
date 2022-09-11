@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, redirect, url_for, flash
-from app.forms import Create_accountForm, LoginForm
+from app.forms import Create_accountForm, LoginForm, CatForm
 from app.models import User
 from flask_login import login_user, logout_user, login_required, current_user 
 
@@ -20,7 +20,8 @@ def hello_cat():
 
 @app.route('/addcats')
 def cat():
-    return render_template('addcats.html')
+    form = CatForm()
+    return render_template('addcats.html', form=form)
 
 
 
@@ -63,4 +64,5 @@ def logout():
     logout_user()
     flash('You have now logged out and left the kitty kingdom', 'primary')
     return redirect(url_for('hello_cat'))
+
 
