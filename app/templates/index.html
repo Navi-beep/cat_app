@@ -5,17 +5,15 @@
      
 
 {% block content %}
-        <h1 class="h1 text-center">Welcome to Cat App!</h1>
+        <h1 class="h1 text-center">Welcome to Cat App, {{current_user.username }}!</h1>
 
-        <h4 class="h4 text-center">My favorite cat breeds:</h4>
-        <ul class="list text-center list-unstyled">
-
-            {% for breed in breeds %}
-                <li>{{breed}}</li>
-            {% endfor %}
-
-        </ul>
+        <div class="cat text-center">
+            <img src="{{url_for('static', filename='pexels.jpg')}}" alt="cat paw on keyboard" class="cat rounded w-50 mb-2"/>
+            </div>
         
 
 
 {% endblock content %}
+
+
+<!-- cat photo from: Photo by Александар Цветановић: https://www.pexels.com/photo/orange-cat-foot-on-laptop-keyboard-1440387/ -->
