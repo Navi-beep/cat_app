@@ -19,16 +19,22 @@
         {% for cat in cats %}
 
         <div class="card text-center">
-            <div class="card-header">
-                {{ cat.fav_cat_breed }}
+            <div class="card-header bg-info">
             </div>
             <div class="card-body">
-              <h5 class="card-title">{{ cat.fav_int_cat}}</h5>
-              <p class="card-text">{{ cat.fav_cat_fact }}</p>
+                <h7>Favorite Internet cat:</h7>
+              <h5 class="card-title"> {{ cat.fav_int_cat}}</h5>
+
+                <h7>Favorite cat breed/color:</h7>
+              <p class="card-text"> {{ cat.fav_cat_breed }}</p>
+                
+              <h7>Favorite cat fact:</h7>
+              <p class="card-text"> {{ cat.fav_cat_fact }}</p>
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
-            <div class="card-footer text-muted">
-              posted by: {{ cat.author.username }}
+            <div class="card-footer bg-info text-muted">
+              Posted by: {{ cat.author.username }} on:
+              {{cat.date_created}}
             </div>
           </div>
         {% endfor %}
