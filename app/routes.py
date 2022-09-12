@@ -88,3 +88,13 @@ def edit_cat(cat_id):
         return redirect(url_for('view_cat', cat_id=cat_id))
     return render_template('editcat.html', cat=cat_to_edit, form=form)    
 
+@app.route('/cats/<cat_id>/delete')
+@login_required
+def delete_cat(cat_id):
+    cat_to_delete = Add_Cat.query.get_or_404(cat_id)
+    if cat_to_delete.author != current_user:
+        flash("You can't do that! You're not allowed to delete that cat!!!", "danger")
+        return redirect(url_for('hello_cat'))
+    cat_to_delete.delete()
+    flash(f"{cat_to_delete.fav_int_cat} has been deleted, how sad meow meow", "info")
+    return redirect(url_for('hello_cat'))
