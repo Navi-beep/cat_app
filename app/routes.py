@@ -8,7 +8,8 @@ from flask_login import login_user, logout_user, login_required, current_user
 @app.route('/')
 def hello_cat():
     cats = Add_Cat.query.all()
-    return render_template('index.html', cats=cats)
+    users = User.query.all()
+    return render_template('index.html', cats=cats, users=users) 
 
 @app.route('/addcats', methods=['GET', 'POST'])
 @login_required

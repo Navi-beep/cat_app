@@ -12,6 +12,7 @@
     <img src="http://placekitten.com/g/200/200" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">username: {{user.username}}</h5>
+      
 
       {% if current_user == user %}
       <p class="card-text">email: {{user.email}} </p>
@@ -21,7 +22,8 @@
   </div>
 
   {% for cat in cats %}
-
+  
+  
         <div class="card text-center mt-3">
             <div class="card-header bg-info">
             </div>
@@ -41,11 +43,12 @@
             </div>
             <div class="card-footer bg-info text-muted">
               Posted by:
-              {{ cat.author.username }} </a> on:
-              {{cat.date_created}}
+              {{ cat.author.username }} on:
+              {{cat.date_created}}  
             </div>
           </div>
         {% endfor %}
+        
 
   
 
