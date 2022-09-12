@@ -53,3 +53,13 @@ class Add_Cat(db.Model):
 
     def __repr__(self):
         return f'<Add_Cat {self.id} | {self.fav_int_cat}>'
+
+    def update_cat(self, **kwargs):
+        for key,value in kwargs.items():
+            if key in {'fav_cat_breed', 'fav_int_cat', 'fav_cat_fact'}:
+                setattr(self, key, value)
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()

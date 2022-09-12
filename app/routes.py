@@ -83,7 +83,7 @@ def edit_cat(cat_id):
         fav_cat_breed = form.fav_cat_breed.data
         fav_int_cat = form.fav_int_cat.data
         fav_cat_fact = form.fav_cat_fact.data
-        cat_to_edit.update_info (fav_cat_breed=fav_cat_breed, fav_int_cat=fav_int_cat, fav_cat_fact=fav_cat_fact)
+        cat_to_edit.update_cat (fav_cat_breed=fav_cat_breed, fav_int_cat=fav_int_cat, fav_cat_fact=fav_cat_fact)
         flash(f"{cat_to_edit.fav_int_cat} has been updated for you", "success")
         return redirect(url_for('view_cat', cat_id=cat_id))
     return render_template('editcat.html', cat=cat_to_edit, form=form)    
