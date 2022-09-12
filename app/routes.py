@@ -64,3 +64,17 @@ def logout():
     return redirect(url_for('hello_cat'))
 
 
+@app.route('/cats/<cat_id>')
+@login_required
+def view_cat(cat_id):
+    cat = Add_Cat.query.get_or_404(cat_id)
+    return render_template('viewcat.html', cat=cat)
+
+
+@app.route('/cats/<cat_id>/edit', methods=['GET', 'POST'])
+@login_required
+def edit_cat(cat_id):
+    cat_to_edit = Add_Cat.query.get_or_404(cat_id)
+    if cat_to_edit.author != current_user:
+        flash("I'm sorry, you do not have permission to edit that cat!", "danger")
+        return redirect(url_for)

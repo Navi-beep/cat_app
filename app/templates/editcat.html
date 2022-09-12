@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% block title %} Edit Cat {% endblock title%}
+
+{% block content %}
+
+<h2 class="h1 text-center">Edit your cat entry {{ cat.fav_int_cat }}here</h2>
+
+<form method="post">
+    {{ form.csrf_token }}
+
+    <div class="form-group">
+
+        {{ form.fav_int_cat.label(class='mt-3') }}
+        {{ form.fav_int_cat(class='form-control mt-3', value=cat.fav_int_cat)}}
+
+        {{ form.fav_cat_breed.label(class='mt-3') }}
+        {{ form.fav_cat_breed(class='form-control mt-3', value=cat.fav_cat_breed)}}
+
+        {{ form.fav_cat_fact.label(class='mt-3') }}
+        {{ form.fav_cat_fact(class='form-control mt-3', value=cat.fav_cat_fact)}}
+
+        {{form.submit(class='btn btn-info w-75 mt-3') }}   
+
+    </div>
+</form>
+
+{% endblock content %}
