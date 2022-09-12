@@ -77,4 +77,14 @@ def edit_cat(cat_id):
     cat_to_edit = Add_Cat.query.get_or_404(cat_id)
     if cat_to_edit.author != current_user:
         flash("I'm sorry, you do not have permission to edit that cat!", "danger")
-        return redirect(url_for)
+        return redirect(url_for('view_cat', cat_id = cat_id))
+    form = CatForm()
+    if form.validate_on_submit():
+        fav_cat_breed = form.fav_cat_breed.data
+        fav_int_cat = form.fav_int_cat.data
+        fav_cat_fact = form.fav_cat_fact.data
+        cat_to_edit.update_info (fav_cat_breed=fav_cat_breed, fav_int_cat=fav_int_cat, fav_cat_fact=fav_cat_fact)
+        flash(f"{cat_to_edit.fav_int_cat} has been updated for you", "success")
+        return redirect(url_for('view_cat', cat_id=cat_id))
+    return render_template('editcat.html', cat=cat_to_edit, form=form)    
+
