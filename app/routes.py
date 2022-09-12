@@ -103,4 +103,5 @@ def delete_cat(cat_id):
 @login_required
 def user_pro(user_id):
     user = User.query.get_or_404(user_id)
-    return render_template('userprofile.html', user = user)
+    cats = Add_Cat.query.filter_by(user_id=user_id)
+    return render_template('userprofile.html', user = user, cats=cats)
