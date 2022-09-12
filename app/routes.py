@@ -112,5 +112,41 @@ def user_pro(user_id):
 
 @app.route('/catimg')
 @login_required
-def cat_fact():
+def cat_img():
     return render_template('catimg.html')
+
+@app.route('/favcats')
+@login_required
+def fav_cats():
+    fam_cats = {'kittie':[
+        {
+         'name': 'Dingus',
+        'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0V6nMQQnXmeJWypRB95gLlZ60S_NJsoWblg&usqp=CAU',
+        'breed': 'tuxedo cat', 
+        'linktocat': 'https://www.tiktok.com/@bigoldbuns/video/7103565800862207274?is_from_webapp=1&sender_device=pc&web_id=7125098913833141806'
+        
+        }, {
+         'name': 'BoneBone',
+        'image': 'https://scontent-ort2-1.xx.fbcdn.net/v/t1.18169-9/27973072_1039662136200166_4310467451451989784_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ytfyDmyTi_MAX9ALeLn&_nc_ht=scontent-ort2-1.xx&oh=00_AT_QZBX2Y0ZAkpyPXveSXjzsOzfVUezm3fFN0ZTJEp0U-g&oe=6344FD2D',
+        'breed': 'persian cat', 
+        'linktocat': 'https://www.instagram.com/bonebone29/?fbclid=IwAR06P6Qe5JLEzGL-mULOGERAXNuQfzkn1JUtedU78plZvkv-zgrlM8AUYY8'
+        
+        }, {
+
+        'name': 'Smudge Lord',
+        'image': 'https://cdn.shopify.com/s/files/1/0255/4016/5720/files/Capture_720x.png?v=1637120671',
+        'breed': 'white cat', 
+        'linktocat': 'https://www.tiktok.com/@smudge_lord/video/7002688427669916934?is_from_webapp=1&sender_device=pc&web_id=7125098913833141806'
+        }
+    ]} 
+
+    return render_template('favcats.html', fam_cats = fam_cats['kittie'])
+
+
+    # credits:
+    #https://www.tiktok.com/@bigoldbuns
+    #https://www.facebook.com/bonebone29
+    #https://www.instagram.com/bonebone29/
+    #https://smudge-lord.com/
+    #https://www.tiktok.com/@smudge_lord
+    #

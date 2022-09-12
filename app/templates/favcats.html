@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block title %} Top Cats of the Internet! {% endblock title %}
+
+{% block content %}
+
+<h2 class="text-center">Top cats from the internet</h2>
+
+
+{% for kitty in fam_cats %}
+
+    <div class="row" style="flex-wrap: wrap; justify-content: space-evenly;">
+        <div class="d-flex card text-center mt-3" style="width: 18rem;">
+            <img src="{{ kitty['image']}}" class="card-img-top mt-2" alt="cat">
+            <div class="card-body">
+            <h5 class="card-title">{{ kitty['name']}}</h5>
+            <p class="card-text">{{ kitty['breed']}}</p>
+            <a href="{{ kitty['linktocat']}}" target="_blank" class="btn btn-info rounded-pill">See the cat!</a>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+
+
+{%endblock content %}
