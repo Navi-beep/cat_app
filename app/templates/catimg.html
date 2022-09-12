@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+
+
+{% block title %} Random Cat! {% endblock title %}
+
+{% block content %}
+
+<h2 class="text-center">Reload page for random kitty image!</h2>
+
+<div class="container text-center">
+
+<img id="kitty" class="cat border border-3 border-dark rounded-2" src="https://thecatapi.com/api/images/get?format=src&type=gif" alt="random cute kitty">
+
+
+<!--<button id="p-2 button text-center bg-primary" onclick="">Click for new kitty!</button>-->
+
+
+</div>
+
+
+
+<script>
+
+
+</script>
+
+
+{% endblock content %}
+
+
+<!-- cat photos from cat api: https://thecatapi.com/api/images/get?format=src&type=gif-->

@@ -5,6 +5,7 @@ from app.forms import Create_accountForm, LoginForm, CatForm
 from app.models import User, Add_Cat
 from flask_login import login_user, logout_user, login_required, current_user
 import requests
+import json 
 
 
 @app.route('/')
@@ -109,8 +110,7 @@ def user_pro(user_id):
     cats = Add_Cat.query.filter_by(user_id=user_id)
     return render_template('userprofile.html', user = user, cats=cats)
 
-@app.route('/catfact')
+@app.route('/catimg')
 @login_required
 def cat_fact():
-    response = requests.get('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1')
-    return render_template('catfact.html')
+    return render_template('catimg.html')
