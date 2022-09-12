@@ -36,11 +36,13 @@
               
             </div>
             <div class="card-footer bg-info text-muted">
-              Posted by: {{ cat.author.username }} on:
+              Posted by:
+              {{ cat.author.username }} </a> on:
               {{cat.date_created}}
             </div>
           </div>
         {% endfor %}
+      
 
 
 {% endif %}
