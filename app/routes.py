@@ -1,8 +1,10 @@
+from urllib import response
 from app import app
 from flask import render_template, redirect, url_for, flash
 from app.forms import Create_accountForm, LoginForm, CatForm
 from app.models import User, Add_Cat
-from flask_login import login_user, logout_user, login_required, current_user 
+from flask_login import login_user, logout_user, login_required, current_user
+import requests
 
 
 @app.route('/')
@@ -110,4 +112,5 @@ def user_pro(user_id):
 @app.route('/catfact')
 @login_required
 def cat_fact():
+    response = requests.get('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1')
     return render_template('catfact.html')
