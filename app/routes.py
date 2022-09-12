@@ -98,3 +98,9 @@ def delete_cat(cat_id):
     cat_to_delete.delete()
     flash(f"{cat_to_delete.fav_int_cat} has been deleted, how sad meow meow", "info")
     return redirect(url_for('hello_cat'))
+
+@app.route('/user/<user_id>')
+@login_required
+def user_pro(user_id):
+    user = User.query.get_or_404(user_id)
+    return render_template('userprofile.html', user= user)
