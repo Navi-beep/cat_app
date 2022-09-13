@@ -6,25 +6,26 @@
 
 {% block content %}
 
-<h1>Welcome to the user profile! </h1>
+<h1 class="text-center">Welcome to the user profile! </h1>
 
-<div class="card" style="width: 18rem;">
-    <img src="http://placekitten.com/g/200/200" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">username: {{user.username}}</h5>
-      
 
-      {% if current_user == user %}
-      <p class="card-text">email: {{user.email}} </p>
-      {% endif %}
-    
+<div class="row" style="flex-wrap: wrap; justify-content: space-evenly;">
+    <div class="d-flex text-center card" style="width: 15rem;">
+        <img src="http://placekitten.com/g/200/200" class="card-img-top mt-3 border border-2 border-dark rounded-pill w-50" style="width: 15rem;" alt="kittycat">
+        <div class="card-body">
+        <h5 class="card-title">username: {{user.username}}</h5>
+        {% if current_user == user %}
+        <p class="card-text">email: {{user.email}} </p>
+        {% endif %}
+        </div>
     </div>
-  </div>
+</div>
+  
 
   {% for cat in cats %}
   
-  
-        <div class="card text-center mt-3">
+  <div class="row" style="flex-wrap: wrap; justify-content: space-evenly;">
+        <div class="d-flex mt-3 card mw-50 text-center" style="width: 35rem;">
             <div class="card-header bg-info">
             </div>
             <div class="card-body">
@@ -47,6 +48,9 @@
               {{cat.date_created}}  
             </div>
           </div>
+        </div>
+    
+    
         {% endfor %}
         
 

@@ -12,9 +12,9 @@
 
 {% for kitty in fam_cats %}
 
-    <div class="row" style="flex-wrap: wrap; justify-content: space-evenly;">
-        <div class="d-flex card text-center mt-3" style="width: 18rem;">
-            <img src="{{ kitty['image']}}" class="card-img-top mt-2" alt="cat">
+    <div class="row text-center" style="flex-wrap: wrap; justify-content: space-evenly;">
+        <div class="card text-center mt-3" style="width: 18rem;">
+            <img src="{{ kitty['image']}}" class="d-flex card-img mt-2" alt="cat">
             <div class="card-body">
             <h5 class="card-title">{{ kitty['name']}}</h5>
             <p class="card-text">{{ kitty['breed']}}</p>
