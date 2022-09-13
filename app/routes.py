@@ -143,6 +143,12 @@ def fav_cats():
     return render_template('favcats.html', fam_cats = fam_cats['kittie'])
 
 
+@app.route('/catfriends')
+def hello_friends():
+    users = User.query.all()
+    return render_template('catfriends.html', users=users) 
+
+
     # credits:
     #https://www.tiktok.com/@bigoldbuns
     #https://www.facebook.com/bonebone29
