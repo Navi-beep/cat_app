@@ -144,6 +144,7 @@ def fav_cats():
 
 
 @app.route('/catfriends')
+@login_required
 def hello_friends():
     users = User.query.all()
     return render_template('catfriends.html', users=users) 
