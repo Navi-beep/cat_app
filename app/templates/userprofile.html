@@ -13,7 +13,8 @@
     <div class="d-flex card" style="width: 15rem;">
         <img src="http://placekitten.com/g/200/200" class="img mt-3 border border-2 border-dark w-auto " style="width: 15rem;" alt="kittycat">
         <div class="card-body">
-        <h5 class="card-title">username: {{user.username}}</h5>
+        <h5 class="card-title text-center">username:</h5>
+        <h5 class="card-title text-center">{{user.username}}</h5>
         {% if current_user == user %}
         <p class="card-text">email: {{user.email}} </p>
         {% endif %}
