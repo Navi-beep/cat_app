@@ -16,7 +16,9 @@
             <div class="container-fluid">
               <a class="navbar-brand text-dark" href="{{ url_for('hello_cat') }}">Cat-tastic Fantastic App </a>
               <button class="navbar-toggler border border-2 border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon">
+                  <img src="{{url_for('static', filename='kitty.png')}}" class="cat w-100"/>
+                </span>
               </button> 
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
@@ -67,3 +69,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
     </body>
 </html>
+
+
+<!--Cat Icon credit to: 
+<a href="https://www.flaticon.com/free-icons/cat" title="cat icons">Cat icons created by Freepik - Flaticon</a>-->
