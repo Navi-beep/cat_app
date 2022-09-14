@@ -6,7 +6,13 @@
 
 {% block content %}
 
+{% if current_user == user %}
+<h1 class="text-center">Welcome to your user profile! </h1>
+
+
+{% else %}
 <h1 class="text-center">Welcome to the user profile! </h1>
+{% endif %}
 
 
 <div class="row" style="flex-wrap: wrap; justify-content: space-evenly;">
