@@ -133,7 +133,7 @@ def cat_photo():
 def fav_cats():
     fam_cats = {'kittie':[
         {
-         'name': 'Dingus',
+         'name': 'BigOldBuns aka Dingus',
         'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0V6nMQQnXmeJWypRB95gLlZ60S_NJsoWblg&usqp=CAU',
         'breed': 'tuxedo cat', 
         'linktocat': 'https://www.tiktok.com/@bigoldbuns/video/7103565800862207274?is_from_webapp=1&sender_device=pc&web_id=7125098913833141806'
