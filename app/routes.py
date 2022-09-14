@@ -178,3 +178,4 @@ def hello_friends():
     #https://www.tiktok.com/@smudge_lord
     #https://www.facebook.com/thekeyboardcat
     #https://scontent-ort2-1.xx.fbcdn.net/v/t1.6435-9/129021515_3742224249164856_3674502398938652537_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_ohc=_0mrfk90Q60AX81QMMz&_nc_ht=scontent-ort2-1.xx&oh=00_AT-gHO8grzQ6QKAacbVE70FIJFWi-3sw63HZJKG3Jzi2ww&oe=63488E86
+    #https://www.facebook.com/thekeyboardcat/photos/pb.100044369021492.-2207520000../3742224245831523/?type=3
