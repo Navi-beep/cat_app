@@ -115,7 +115,7 @@ def user_pro(user_id):
 @app.route('/catimg')
 @login_required
 def cat_img():
-    url ='https://api.thecatapi.com/v1/images/search?size=full'
+    url ='https://api.thecatapi.com/v1/images/search?size=small'
     res = requests.get(url)
     cat_meow = eval(res.text)[0]['url']
     res_data = {

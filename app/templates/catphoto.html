@@ -1,6 +1,7 @@
 {% extends 'base.html'%}
 
 
+
 {% block title %} Random Cat! {% endblock title %}
 
 {% block content %}
@@ -8,8 +9,7 @@
 <h2 class="text-center">Random kitty image!</h2>
 
 
-
-<div id="Meowcat" class="kitten mt-3 w-10" style="width: 10rem;"></div>
+<div id="Meowcat" class="kitten mt-3 w-25"></div>
 <button id="randomcat" type="button" class="w-25 rounded-pill bg-info mt-3 text-center">Click for random kitty</button>
 
 
@@ -33,7 +33,6 @@ async function getMeow(url, ){
     const catDiv = document.getElementById("Meowcat")
     const imageElement = document.createElement("img")
     imageElement.src = res.cat_meow;
-    //imageElement.className
     catDiv.appendChild(imageElement)
 
 }
