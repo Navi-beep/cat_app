@@ -150,6 +150,13 @@ def fav_cats():
         'image': 'https://cdn.shopify.com/s/files/1/0255/4016/5720/files/Capture_720x.png?v=1637120671',
         'breed': 'white cat', 
         'linktocat': 'https://www.tiktok.com/@smudge_lord/video/7002688427669916934?is_from_webapp=1&sender_device=pc&web_id=7125098913833141806'
+        } , 
+        {
+
+        'name': 'Bento aka Keyboard Cat',
+        'image': 'https://scontent-ort2-1.xx.fbcdn.net/v/t1.6435-9/129021515_3742224249164856_3674502398938652537_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_ohc=_0mrfk90Q60AX81QMMz&_nc_ht=scontent-ort2-1.xx&oh=00_AT-gHO8grzQ6QKAacbVE70FIJFWi-3sw63HZJKG3Jzi2ww&oe=63488E86',
+        'breed': 'tabby', 
+        'linktocat': 'https://fb.watch/fxYmhhYAz-/'
         }
     ]} 
 
@@ -169,4 +176,5 @@ def hello_friends():
     #https://www.instagram.com/bonebone29/
     #https://smudge-lord.com/
     #https://www.tiktok.com/@smudge_lord
-    #
+    #https://www.facebook.com/thekeyboardcat
+    #https://scontent-ort2-1.xx.fbcdn.net/v/t1.6435-9/129021515_3742224249164856_3674502398938652537_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_ohc=_0mrfk90Q60AX81QMMz&_nc_ht=scontent-ort2-1.xx&oh=00_AT-gHO8grzQ6QKAacbVE70FIJFWi-3sw63HZJKG3Jzi2ww&oe=63488E86
