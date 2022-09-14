@@ -1,4 +1,6 @@
 from urllib import response
+
+from flask_cors import cross_origin
 from app import app
 from flask import render_template, redirect, url_for, flash
 from app.forms import Create_accountForm, LoginForm, CatForm

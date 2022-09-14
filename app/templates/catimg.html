@@ -5,25 +5,34 @@
 
 {% block content %}
 
-<h2 class="text-center">Reload page for random kitty image!</h2>
+<h2 class="text-center">Random kitty image!</h2>
 
-<div class="container text-center">
+<div class="row">
+    <div class="d-flex container justify-content-center" style="width: 50rem;">
 
-<img id="kitty" class="cat border border-3 border-dark rounded-2 w-75" src="https://thecatapi.com/api/images/get?format=src&type=gif" alt="random cute kitty">
+    <img id="kitty" class="d-flex cat border border-3 border-dark rounded-2 w-50" src="https://thecatapi.com/api/images/get?formatimg" alt="random cute kitty">
 
+    </div>
 
-<!--<button id="p-2 button text-center bg-primary" onclick="">Click for new kitty!</button>-->
+</div>
 
+<div class="row">
 
+    <div class="d-flex text-center justify-content-center">
+        <a href="{{url_for('cat_img')}}">
+    
+            <button id="catButton" class="d-flex text-center bg-info border-border rounded-pill mt-3">Click for new kitty!</button>
+                
+            </a>
+    
+        </div>
 </div>
 
 
 
 <script>
 
-
 </script>
-
 
 {% endblock content %}
 
