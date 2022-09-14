@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+
+
+{% block title %} Random Cat! {% endblock title %}
+
+{% block content %}
+
+<h2 class="text-center">Random kitty image!</h2>
+
+
+<div class="cat w-10">
+<div id="Meowcat" class="kitten mt-3" style="width: 10rem;"></div>
+<button id="randomcat" type="button" class=" text-center w-25 rounded-pill bg-info">Click for random kitty</button>
+</div>
+
+
+
+<script>
+
+const url = './catimg'
+const i = {
+    method: 'GET'
+}
+
+function KittyPhoto(url, i){
+    return fetch(url, i)
+    .then (res => res.json());
+}
+
+async function getMeow(url, ){
+    const res = await KittyPhoto(url, i)
+    const catDiv = document.getElementById("Meowcat")
+    const imageElement = document.createElement("img")
+    imageElement.src = res.cat_meow;
+    //imageElement.className
+    catDiv.appendChild(imageElement)
+
+}
+
+document.getElementById("randomcat")
+.addEventListener("click", () => {
+    getMeow(url, i)
+}
+)
+
+</script>
+
+{% endblock content %}

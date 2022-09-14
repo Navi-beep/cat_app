@@ -2,7 +2,7 @@ from urllib import response
 
 from flask_cors import cross_origin
 from app import app
-from flask import render_template, redirect, url_for, flash
+from flask import render_template, redirect, url_for, flash, jsonify
 from app.forms import Create_accountForm, LoginForm, CatForm
 from app.models import User, Add_Cat
 from flask_login import login_user, logout_user, login_required, current_user
@@ -115,7 +115,18 @@ def user_pro(user_id):
 @app.route('/catimg')
 @login_required
 def cat_img():
-    return render_template('catimg.html')
+    url ='https://api.thecatapi.com/v1/images/search?size=full'
+    res = requests.get(url)
+    cat_meow = eval(res.text)[0]['url']
+    res_data = {
+        'cat_meow' : cat_meow 
+    }
+    return jsonify(res_data) 
+
+@app.route('/catphoto')
+@login_required
+def cat_photo():
+    return render_template('catphoto.html')
 
 @app.route('/favcats')
 @login_required
