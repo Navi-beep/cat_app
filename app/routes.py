@@ -42,8 +42,8 @@ def create_account():
             flash('A user with that username or email already exists!', 'danger')
             return redirect(url_for('create_account'))
         new_user = User(email=email, username=username, password=password)
-        flash(f"{new_user.username} has been added to website!", "success")
-        return redirect(url_for('hello_cat')) 
+        flash(f"{new_user.username} has been added to website, Please log in!", "success")
+        return redirect(url_for('login')) 
     return render_template('createaccount.html', form=form)
 
 @app.route('/loginpage', methods=['GET', 'POST'])
